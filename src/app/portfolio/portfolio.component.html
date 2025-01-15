@@ -1,0 +1,114 @@
+<!-- <section class="d-flex justify-content-center align-items-center py-5">
+    <div class="container">
+        <h1 class="fw-bold text-uppercase fs-2 text-center">portfolio component</h1>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="line ms-auto"></div>
+            <i class="fa-solid fa-star  px-4 fs-4"></i>
+            <div class="line me-auto"></div>
+        </div>
+        <div class="row">
+            <div  class="col-md-4 g-5">
+                <div class="portfolio-img position-relative">
+                    <img alt="porfolio images" class="w-100 rounded-3" src="/img/portfolio_one.png">
+                    <div class="position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center overlay rounded-3">
+                        <i  class="fa fa-plus fa-6x text-white plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-md-4 g-5">
+                <div class="portfolio-img position-relative">
+                    <img alt="porfolio images" class="w-100 rounded-3" src="/img/portfolio_two.png">
+                    <div class="position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center overlay rounded-3">
+                        <i  class="fa fa-plus fa-6x text-white plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-md-4 g-5">
+                <div class="portfolio-img position-relative">
+                    <img alt="porfolio images" class="w-100 rounded-3" src="/img/portfolio_three.png">
+                    <div class="position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center overlay rounded-3">
+                        <i  class="fa fa-plus fa-6x text-white plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-md-4 g-5">
+                <div class="portfolio-img position-relative">
+                    <img alt="porfolio images" class="w-100 rounded-3" src="/img/portfolio_one.png">
+                    <div class="position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center overlay rounded-3">
+                        <i  class="fa fa-plus fa-6x text-white plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-md-4 g-5">
+                <div class="portfolio-img position-relative">
+                    <img alt="porfolio images" class="w-100 rounded-3" src="/img/portfolio_two.png">
+                    <div class="position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center overlay rounded-3">
+                        <i  class="fa fa-plus fa-6x text-white plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-md-4 g-5">
+                <div class="portfolio-img position-relative">
+                    <img alt="porfolio images" class="w-100 rounded-3" src="/img/portfolio_three.png">
+                    <div class="position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center overlay rounded-3">
+                        <i  class="fa fa-plus fa-6x text-white plus"></i>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section> -->
+
+
+<section>
+    <div class="portpolio">
+      <div class="container">
+        
+        <h2 class="fw-bold fs-1 text-uppercase  text-center mb-3">portfolio component</h2>
+        <div class="d-flex justify-content-center align-items-center mb-2">
+            <div class="line ms-auto"></div>
+            <i class="fa-solid fa-star  px-4 fs-4"></i>
+            <div class="line me-auto"></div>
+        </div>
+  
+        <div class="row g-5 mt-4">
+          @for (image of images; track $index) {
+  
+          <div class="col-md-4">
+            <div class="item">
+              <div
+                (click)="currentImage = image"
+                class="image"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img class="rounded" [src]="image" alt="Not Found" width="100%" />
+                <div class="layer">
+                  <i class="text-white fa-solid fa-plus fa-6x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-body">
+        <img [src]="currentImage" alt=" Not Found Image" width="600px" />
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,12 @@
+.line
+{
+    width: 80px;
+    height: 4px;
+    background-color: black;
+}
+
+section .contact
+{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
